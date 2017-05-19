@@ -1,0 +1,10 @@
+.modal-backdrop {
+    z-index: 0 !important;
+}
+#map_canvas {
+    height: 420px;
+    width: 100%;
+}
+#booking {
+    display: none;
+}

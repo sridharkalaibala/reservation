@@ -1,0 +1,78 @@
+<h2>Please choose free stand and reserve</h2>
+<div>
+    <div>
+
+        <div id="container" style="height: 440px; width: 880px; margin-top: 50px; margin-left: -12px; position: relative">
+
+            <img id="imagem-principal" width="960" height="600" border="0" src="app/img/stands/map/{{mapimage}}">
+
+        </div>
+
+    </div>
+
+    <!-- Create Modal -->
+    <div class="modal fade" id="create-company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="POST" name="addCompany" id="addCompany" role="form" ng-submit="createCompany()" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Stand Reservation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <strong>Admin : </strong>
+                                    <div class="form-group">
+                                        <input ng-model="admin" type="text" placeholder="Admin Name" name="admin" class="form-control" maxlength="50" required />
+                                        <input type="hidden" name="stand_id" id="stand_id" value="" />
+                                        <span ng-show="addCompany.admin.$touched && addCompany.admin.$invalid"> Admin name is required.</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <strong>Phone : </strong>
+                                    <div class="form-group">
+                                        <input ng-model="phone" type="tel" placeholder="Phone" name="phone" class="form-control"  maxlength="50" required />
+                                        <span ng-show="addCompany.phone.$touched && addCompany.phone.$invalid">Phone number is required.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <strong>Email : </strong>
+                                    <div class="form-group">
+                                        <input ng-model="email" type="email" placeholder="Email" name="email" class="form-control"  maxlength="120"  required />
+                                        <span ng-show="addCompany.email.$touched && addCompany.email.$invalid" >Email is required.</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <strong>Logo : </strong>
+                                    <div class="form-group">
+                                        <input ng-model="logo" type="file" valid-file  placeholder="Name" name="logo"  maxlength="50"   accept="image/*" class="form-control" required />
+                                        <span ng-show="addCompany.logo.$touched && addCompany.logo.$invalid" >Logo is required.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <strong>Marketing Documents : </strong>
+                                    <div class="form-group">
+                                        <input ng-model="marketing_documents"   valid-file  type="file" placeholder="Markeing Documents" name="marketing_documents"  maxlength="50"   accept=".zip" class="form-control" required />
+                                        <span ng-show="addCompany.marketing_documents.$touched && addCompany.marketing_documents.$invalid" >Marketing Document is required.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" ng-disabled="addCompany.$invalid" class="btn btn-primary">Reserve</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
